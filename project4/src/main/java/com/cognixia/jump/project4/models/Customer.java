@@ -6,7 +6,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-// Simple Customer Model
+// Simple Customer Model for new customers
 
 @Entity
 public class Customer {
