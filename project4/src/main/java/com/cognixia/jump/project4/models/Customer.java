@@ -22,8 +22,11 @@ public class Customer {
     @Column(name = "last_name", nullable=false)
     private String lastName;
 
-    @Column(name = "contact_info", nullable = false)
+    @Column(name = "contact_number", nullable = false)
     private String contactInfo;
+
+    @Column(name = "user_password", nullable = false)
+    private String password;
 
 
     
