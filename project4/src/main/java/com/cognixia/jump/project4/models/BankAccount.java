@@ -1,6 +1,5 @@
 package com.cognixia.jump.project4.models;
 
-
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -12,26 +11,25 @@ import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "BankAccount")
-public class BankAccount{
+public class BankAccount {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer accountNumber;
 
-    @Column(name = "customer_id", nullable = false)
+    @Column(nullable = false)
     private Integer customerID;
 
-
-    @Column(columnDefinition = "double default 0" ,name= "checking_account")
+    @Column(columnDefinition = "double default 0", name = "checking_account")
     private double checkingAccount;
 
     @Column(columnDefinition = "double default 0", name = "savings_account")
     private double savingsAccount;
 
-    // One to One Relation to Customer 
-    @ManyToOne
-    @JoinColumn(name = "customer_ID")
-    private Customer customer;
+    // One to One Relation to Customer
+    // @ManyToOne
+    // @JoinColumn(name = "customer_ID")
+    // private Customer customer;
 
     public BankAccount(Integer accountNumber, Integer customerID, double checkingAccount, double savingsAccount,
             Customer customer) {
@@ -39,7 +37,6 @@ public class BankAccount{
         this.customerID = customerID;
         this.checkingAccount = checkingAccount;
         this.savingsAccount = savingsAccount;
-        this.customer = customer;
     }
 
     public Integer getAccountNumber() {
@@ -74,20 +71,10 @@ public class BankAccount{
         this.savingsAccount = savingsAccount;
     }
 
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
     @Override
     public String toString() {
         return "BankAccount [accountNumber=" + accountNumber + ", customerID=" + customerID + ", checkingAccount="
-                + checkingAccount + ", savingsAccount=" + savingsAccount + ", customer=" + customer + "]";
+                + checkingAccount + ", savingsAccount=" + savingsAccount + "]";
     }
-
-    
 
 }

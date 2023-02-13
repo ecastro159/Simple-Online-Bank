@@ -20,24 +20,26 @@ public class Customer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "customer_ID")
+    // @Column(name = "customer_ID")
     private Integer customerID;
 
-    @Column(name = "first_name", columnDefinition = "varchar(50)", nullable = false)
+    @Column(columnDefinition = "varchar(50)", nullable = false)
     private String firstName;
 
-    @Column(name = "last_name", columnDefinition = "varchar(50)", nullable = false)
+    @Column(columnDefinition = "varchar(50)", nullable = false)
     private String lastName;
 
-    @Column(name = "contact_number", columnDefinition = "varchar(50)", nullable = false)
+    @Column(columnDefinition = "varchar(50)", nullable = false)
     private String contactInfo;
 
-    @Column(name = "user_password", columnDefinition = "varchar(10)", nullable = false)
+    @Column(columnDefinition = "varchar(10)", nullable = false)
     private String password;
 
     // One to One 
-    @OneToMany(mappedBy = "customer")
-    private BankAccount bankAccount;
+    // @OneToMany(mappedBy = "customer")
+    // private BankAccount bankAccount;
+
+
 
     public Customer() {
     }
